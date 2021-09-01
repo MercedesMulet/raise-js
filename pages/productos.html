@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- FONT RUBIK -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- FONT CLASH DISPLAY -->
+    <link href="https://api.fontshare.com/css?f[]=clash-display@200,300,400,500,600,700&display=swap" rel="stylesheet">
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <title>Raise | Cortadores de Llaves</title>
+</head>
+
+<body>
+    <div class="cart-bar">
+        <!-- <div class="link-div">
+            <a href="./paquetes.html" class="link-header">
+                <p>No te pierdas los descuentos del mes</p>
+            </a>
+        </div> -->
+        <div class="icons">
+            <a href=""><i class="social-icon fab fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/raise.cortadores" target="blank"><i class="social-icon fab fa-facebook"></i></a>
+            <i id="cartNav" class="cart-icon fas fa-shopping-cart"></i>
+        </div>
+    </div>
+    <header class="container">
+        <nav class="nav-main">
+            <a href="../index.html"><img src="../img/logo-raise.png" alt="Logo Raise Cortadores México"
+                    class="nav-brand"></a>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="paquetes.html">Paquetes</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <ul class="nav-menu-right">
+                <li>
+                    <a href="#">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="banner-products">
+            <h2>Conoce nuestras promos</h2>
+            <hr>
+        </div>
+
+        <div class="ecom">
+            <aside class="aside">
+                <div id="cartList" class="cart-list">
+                    <h3>Carrito</h3>
+                </div>
+                <hr>
+                <div class="filter-list">
+                    <h3>Filtros</h3>
+                    <p>Tipo de cortador:</p>
+                    <label for="discoCh">
+                        <input type="checkbox" name="disco" value="disco" id="discoCh">
+                        <span>Disco</span>
+                    </label>
+                    <label for="cortPuntoCh">
+                        <input type="checkbox" name="cortador-punto" value="cortador-punto" id="cortPuntoCh">
+                        <span>Cortador para llaves de punto</span>
+                    </label>
+                    <label for="cortRegataCh">
+                        <input type="checkbox" name="cortador-regata" value="cortador-regata" id="cortRegataCh">
+                        <span>Cortador para llaves de regata</span>
+                    </label>
+                    <label for="guiaPuntoCh">
+                        <input type="checkbox" name="guia-punto" value="guia-punto" id="guiaPuntoCh">
+                        <span>Guía para llaves de punto</span>
+                    </label>
+                    <label for="guiaRegataCh">
+                        <input type="checkbox" name="guia-regata" value="guia-regata" id="guiaRegataCh">
+                        <span>Guía para llaves de regata</span>
+                    </label>
+                </div>
+            </aside>            
+
+            <div id="ecomSection" class="ecom-section"></div>
+
+        </div>
+
+    </main>
+
+    <script src="../js/products.js"></script>
+    <script src="../js/cards.js"></script>
+    <!-- <script src="../js/cart.js"></script> -->
+    <!-- <script src="../js/order.js"></script> -->
+</body>
+
+</html>
