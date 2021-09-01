@@ -1,4 +1,2 @@
 # Ignore
-node_modules 
-order.js
-cart.js
+node_modules
