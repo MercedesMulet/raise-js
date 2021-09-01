@@ -36,26 +36,33 @@ function createCard(producto) {
     imageContainer.appendChild(imageElement);
     infoContainer.append(headingElement, paragraphElement, spanElement, btnElement);
 
+    //funcion para guardar en storage
+    function saveOnStorage() {
+        let storageItem = JSON.stringify(localStorage.setItem(producto.codigoRaise, `$${producto.precio}`));
+        return storageItem;
+    };
+
     //evento para boton agregar
     btnElement.addEventListener("click", (e) => {
         e.preventDefault();
         console.log(`Elegiste el cortador: ${producto.codigoRaise}`);
         addCart(producto);
+        saveOnStorage();
     });
 }
 
 function completeCard() {
     listaProductos.forEach(producto => {
-        createCard(producto)
-    })
+        createCard(producto);
+    });
 };
 
 completeCard();
 
 function filterProducts(array) {
     array.forEach(producto => {
-        createCard(producto)
-    })
+        createCard(producto);
+    });
 };
 
 //funcion para agregar al carrito
@@ -77,18 +84,11 @@ function addCart(producto) {
     productoP.appendChild(deleteItem);
 
     //evento eliminar
-    deleteItem.addEventListener("click", (e)=>{
+    deleteItem.addEventListener("click", (e) => {
         cartList.removeChild(productoP);
         cartNav.removeChild(alertCart);
     });
-
 };
-
-//funcion para eliminar item del carrito
-/* function deleteCartItem(producto) {
-    
-}; */
-
 
 //funcion para aplicar filtros
 
@@ -123,4 +123,3 @@ function handleChange(e) {
 
     e.preventDefault();
 };
-
