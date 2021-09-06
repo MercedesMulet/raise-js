@@ -1,4 +1,4 @@
-let ecomSection = $("#ecomSection");
+let ecomSection = document.getElementById("ecomSection");
 
 function createCard(producto) {
     let cardElement = document.createElement('div');
@@ -31,9 +31,9 @@ function createCard(producto) {
     spanElement.innerHTML = `<br>$ ${producto.precio}<br>`;
     btnElement.innerHTML = "Agregar al carrito";
 
-    ecomSection.append(cardElement);
+    ecomSection.appendChild(cardElement);
     cardElement.append(imageContainer, infoContainer);
-    imageContainer.append(imageElement);
+    imageContainer.appendChild(imageElement);
     infoContainer.append(headingElement, paragraphElement, spanElement, btnElement);
 
     //funcion para guardar en storage
@@ -43,13 +43,13 @@ function createCard(producto) {
     };
 
     //evento para boton agregar
-    $("#btnElement").on('click', ((e) => {
+    btnElement.addEventListener("click", (e) => {
         e.preventDefault();
         console.log(`Elegiste el cortador: ${producto.codigoRaise}`);
         addCart(producto);
         saveOnStorage();
-    }));
-};
+    });
+}
 
 function completeCard() {
     listaProductos.forEach(producto => {
@@ -67,27 +67,26 @@ function filterProducts(array) {
 
 //funcion para agregar al carrito
 function addCart(producto) {
-    let cartNav = $('#cartNav');
-    let alertCart = $('body').append('i');
-
+    let cartNav = document.getElementById("cartNav");
+    let alertCart = document.createElement("i");
     alertCart.className = "alert-cart";
-    alertCart.prepend (`<i class="fas fa-plus-circle"></i>`);
-    cartNav.append(alertCart);
+    alertCart.innerHTML = `<i class="fas fa-plus-circle"></i>`;
+    cartNav.appendChild(alertCart);
 
-    let cartList = $('#cartList');
+    let cartList = document.getElementById("cartList");
     let productoP = document.createElement("p");
     productoP.innerHTML = `Producto: ${producto.codigoRaise} <b><i>$${producto.precio}</i></b>`;
-    cartList.append(productoP);
+    cartList.appendChild(productoP);
 
     let deleteItem = document.createElement("i");
     deleteItem.className = "delete-item";
     deleteItem.innerHTML = `<i class="fas fa-trash-alt"></i>`;
-    productoP.append(deleteItem);
+    productoP.appendChild(deleteItem);
 
     //evento eliminar
-    $('#deleteItem').click((e) => {
-        cartList.remove(productoP);
-        cartNav.remove(alertCart);
+    deleteItem.addEventListener("click", (e) => {
+        cartList.removeChild(productoP);
+        cartNav.removeChild(alertCart);
     });
 };
 

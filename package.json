@@ -14,5 +14,13 @@
     "nodemon": "^2.0.12"
   },
   "dependencies": {},
-  "description": ""
+  "description": "<h1 align=\"center\">Hi 👋, I'm Mercedes Mulet</h1>\r <h3 align=\"center\">A passionate UX UI designer and frontend developer from Argentina</h3>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MercedesMulet/raise-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MercedesMulet/raise-js/issues"
+  },
+  "homepage": "https://github.com/MercedesMulet/raise-js#readme"
 }

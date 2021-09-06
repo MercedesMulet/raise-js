@@ -1,0 +1,26 @@
+/* PRODUCTOS */
+.banner-products {
+    background: url("../img/banner.jpg") no-repeat center;
+    width: 100%;
+    height: 15rem;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h2 {
+        font-family: "Clash display", sans-serif;
+        font-weight: 600;
+        font-size: 2rem;
+        line-height: 3.5rem;
+        text-transform: uppercase;
+    }
+
+    hr {
+        background-color: white;
+        border: 2px solid white;
+        width: 15rem;
+        margin-top: 1rem;
+    }
+}

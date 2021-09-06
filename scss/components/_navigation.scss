@@ -1,0 +1,39 @@
+/* NAVIGATION */
+.nav-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 2.5rem 0;
+
+    .nav-brand {
+        width: 120px;
+    }
+
+    .nav-menu {
+        display: flex;
+        flex: 1;
+        justify-content: flex-end;
+        margin-right: 1.8rem;
+
+        li {
+            cursor: pointer;
+            padding: 1rem 1.7rem;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            border-bottom: 3px transparent solid;
+
+            &:hover {
+                border-bottom: 3px white solid;
+            }
+        }
+    }
+
+    .nav-menu-right {
+        font-size: 1.2rem;
+
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+}

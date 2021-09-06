@@ -1,0 +1,75 @@
+/* HERO */
+#hero {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7rem 0;
+
+
+    .img-hero {
+        width: 50%;
+        filter: drop-shadow(20px 20px rgba(255, 255, 255, 0.8));
+    }
+
+    .heroContent {
+        width: 36%;
+        margin-right: 2.5rem;
+
+        h1 {
+            font-family: "Clash display", sans-serif;
+            font-weight: 600;
+            font-size: 3rem;
+            line-height: 3.5rem;
+            padding-bottom: 1rem;
+        }
+
+        p {
+            font-weight: 200;
+            margin-bottom: 3rem;
+            line-height: 1.5rem;
+        }
+
+        .cta-hero {
+            .btn-one {
+                background-color: #f4c023;
+                border: 1px solid #f4c023;
+                padding: 0.8rem 1.2rem;
+                color: #056F72;
+                font-size: 0.9rem;
+                font-weight: 600;
+                transition: opacity .3s;
+
+                i {
+                    margin-left: 0.5rem;
+                }
+
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+
+            .btn-two {
+                background-color: transparent;
+                border: 1px solid #f4c023;
+                padding: 0.8rem 1.2rem;
+                color: #f4c023;
+                font-size: 0.9rem;
+                font-weight: 600;
+                margin-left: 1rem;
+                transition: all .3s;
+
+                i {
+                    margin-left: 0.5rem;
+                }
+
+                &:hover {
+                    background-color: white;
+                    border: 1px solid white;
+                    color: #056F72;
+                }
+            }
+        }
+
+    }
+}
