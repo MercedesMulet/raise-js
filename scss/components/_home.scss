@@ -1,20 +1,18 @@
 /* HERO */
 #hero {
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 7rem 0;
-
+    padding: 5rem 0;
 
     .img-hero {
         width: 50%;
-        filter: drop-shadow(20px 20px rgba(255, 255, 255, 0.8));
+        /* filter: drop-shadow(10px 10px rgba(255, 255, 255, 0.5)); */
     }
 
     .heroContent {
         width: 36%;
-        margin-right: 2.5rem;
+        margin-right: 5rem;
 
         h1 {
             font-family: "Clash display", sans-serif;
@@ -25,6 +23,7 @@
         }
 
         p {
+            width: 400px;
             font-weight: 200;
             margin-bottom: 3rem;
             line-height: 1.5rem;
@@ -72,4 +71,15 @@
         }
 
     }
+}
+
+/* Section 'Products' */
+#productsSection {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 100vw;
+    min-height: 80vh;
+    left: 0;
+    
+
 }

@@ -21,7 +21,34 @@ ul {
     list-style: none;
 }
 
+button {
+    cursor: pointer;
+}
+
 .container {
     width: 85%;
     margin: auto;
+}
+
+.top-btn {
+    position: relative;
+    margin: 5rem 0;
+    right: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    float: right;
+    height: 1rem;
+    background-color: #f4c023;
+    border: 1px solid #f4c023;
+    padding: 0.8rem 1rem;
+    color: #056F72;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: opacity .3s;
+    border-radius: 50px;
+    transform: rotate(-90deg);
+    i {
+        margin-left: .5rem;
+    }
 }

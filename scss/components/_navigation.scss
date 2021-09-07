@@ -31,9 +31,19 @@
 
     .nav-menu-right {
         font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         &:hover {
             opacity: 0.5;
+        }
+
+        .search-input{
+            display: none;
+            margin-left: 1rem;
+            border: none;
+            height: 1rem;
         }
     }
 }

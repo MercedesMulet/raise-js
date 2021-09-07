@@ -7,12 +7,9 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding: 0.8rem 2rem;
+    padding: 0.8rem 5rem;
 
     .icons {
-        width: 10%;
-
-
         a {
             color: #056F72;
 
@@ -24,14 +21,14 @@
         }
 
         .cart-icon {
-            margin-left: 2rem;
+            margin-left: 1.5rem;
             font-size: 1.2rem;
         }
 
         .alert-cart {
             color: rgb(23, 255, 23);
             position: absolute;
-            right: 4rem;
+            right: 4.2rem;
             top: 0.8rem;
 
             i {
