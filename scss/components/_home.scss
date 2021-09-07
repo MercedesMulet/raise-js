@@ -75,11 +75,64 @@
 
 /* Section 'Products' */
 #productsSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgb(255, 255, 255);
     width: 100vw;
     min-height: 80vh;
     left: 0;
-    
+
+    .card-home {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 50px;
+
+        img {
+            width: 300px;
+            margin-bottom: 1.5rem;
+            border-bottom: 8px #f4c023 solid;
+        }
+
+        h2 {
+            width: 300px;
+            color: #056F72;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+    }
+}
+
+/* Banner Section */
+
+#bannerSearcher {
+    background: url("../img/banner.jpg") no-repeat center;
+    width: 100%;
+    height: 18rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h3 {
+        font-family: "Clash display", sans-serif;
+        font-weight: 600;
+        font-size: 2rem;
+    }
+
+    .searcher-bar {
+        cursor: pointer;
+        width: 50%;
+        height: 2rem;
+        padding: 1rem;
+        margin-top: 1rem;
+        border: none;
+        font-family: "Rubik", sans-serif;
+        font-size: 1rem;
+    }
+
 
 }
