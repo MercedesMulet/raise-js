@@ -14,4 +14,7 @@ $(function () {
         }, 1000);
     });
 
-})
+    $('.img-hero').css('position', 'relative').css('left', '-600px').animate({
+        left: '0px',
+    }, 1500)
+});
