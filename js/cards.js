@@ -1,3 +1,6 @@
+// array para carrito
+const cart = [];
+
 let ecomSection = document.getElementById("ecomSection");
 
 function createCard(producto) {
@@ -67,11 +70,21 @@ function filterProducts(array) {
 
 //funcion para agregar al carrito
 function addCart(producto) {
+    // icono plus carrito
     let cartNav = document.getElementById("cartNav");
     let alertCart = document.createElement("i");
     alertCart.className = "alert-cart";
     alertCart.innerHTML = `<i class="fas fa-plus-circle"></i>`;
     cartNav.appendChild(alertCart);
+
+    // completo array
+    cart.push({
+        categoria: producto.categoria,
+        codigoRaise: producto.codigoRaise,
+        precio: producto.precio,
+    });
+
+    console.log(cart);
 
     let cartList = document.getElementById("cartList");
     let productoP = document.createElement("p");
