@@ -14,6 +14,11 @@ $(function () {
         }, 1000);
     });
 
+    //Animaciones concatenadas
+    $('.img-hero').css('position', 'relative').css('left', '-600px').animate({
+        left: '0px',
+    }, 1500)
+
     //Declaramos la url que vamos a usar para el GET
     const URLGET = "https://jsonplaceholder.typicode.com/posts"
     //Escuchamos el evento click del botón agregado
@@ -40,6 +45,4 @@ $(function () {
         $("#testimonialBtn").remove();
     });
 
-
-})
-
+});
