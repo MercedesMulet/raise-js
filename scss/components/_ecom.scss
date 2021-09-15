@@ -27,10 +27,20 @@
                     cursor: pointer;
                 }
             }
+
+
+            th {
+                font-size: 0.8rem;
+                padding-right: 0.5rem;
+            }
+
+            #productQty {
+                width: 2rem;
+            }
         }
 
         hr {
-            width: 15rem;
+            width: 20rem;
             margin-bottom: 2rem;
         }
 

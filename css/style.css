@@ -301,8 +301,13 @@ button {
         .ecom .aside .cart-list p .delete-item {
           margin-left: 1rem;
           cursor: pointer; }
+      .ecom .aside .cart-list th {
+        font-size: 0.8rem;
+        padding-right: 0.5rem; }
+      .ecom .aside .cart-list #productQty {
+        width: 2rem; }
     .ecom .aside hr {
-      width: 15rem;
+      width: 20rem;
       margin-bottom: 2rem; }
     .ecom .aside .filter-list {
       display: flex;

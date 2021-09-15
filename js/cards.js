@@ -1,6 +1,3 @@
-// array para carrito
-const cart = [];
-
 let ecomSection = document.getElementById("ecomSection");
 
 function createCard(producto) {
@@ -39,13 +36,15 @@ function createCard(producto) {
     imageContainer.appendChild(imageElement);
     infoContainer.append(headingElement, paragraphElement, spanElement, btnElement);
 
-    //funcion para guardar en storage
+    let precio = `${producto.precio}`;
+
+    // funcion para guardar en storage
     function saveOnStorage() {
-        let storageItem = JSON.stringify(localStorage.setItem(producto.codigoRaise, `$${producto.precio}`));
+        let storageItem = localStorage.setItem('precio', precio);
         return storageItem;
     };
 
-    //evento para boton agregar
+    // evento para boton agregar
     btnElement.addEventListener("click", (e) => {
         e.preventDefault();
         console.log(`Elegiste el cortador: ${producto.codigoRaise}`);
@@ -62,48 +61,13 @@ function completeCard() {
 
 completeCard();
 
+// funcion para aplicar filtros
+
 function filterProducts(array) {
     array.forEach(producto => {
         createCard(producto);
     });
 };
-
-//funcion para agregar al carrito
-function addCart(producto) {
-    // icono plus carrito
-    let cartNav = document.getElementById("cartNav");
-    let alertCart = document.createElement("i");
-    alertCart.className = "alert-cart";
-    alertCart.innerHTML = `<i class="fas fa-plus-circle"></i>`;
-    cartNav.appendChild(alertCart);
-
-    // completo array
-    cart.push({
-        categoria: producto.categoria,
-        codigoRaise: producto.codigoRaise,
-        precio: producto.precio,
-    });
-
-    console.log(cart);
-
-    let cartList = document.getElementById("cartList");
-    let productoP = document.createElement("p");
-    productoP.innerHTML = `Producto: ${producto.codigoRaise} <b><i>$${producto.precio}</i></b>`;
-    cartList.appendChild(productoP);
-
-    let deleteItem = document.createElement("i");
-    deleteItem.className = "delete-item";
-    deleteItem.innerHTML = `<i class="fas fa-trash-alt"></i>`;
-    productoP.appendChild(deleteItem);
-
-    //evento eliminar
-    deleteItem.addEventListener("click", (e) => {
-        cartList.removeChild(productoP);
-        cartNav.removeChild(alertCart);
-    });
-};
-
-//funcion para aplicar filtros
 
 let filterOpt = document.querySelectorAll('input[type="checkbox"]');
 
