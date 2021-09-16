@@ -1,5 +1,16 @@
 // array para carrito
-const cart = [];
+let cart = [];
+const LScart = localStorage.getItem("cart")
+
+    // funcion para guardar en storage
+    function saveOnStorage() {
+        let storageItem = localStorage.setItem('cart', JSON.stringify(cart));
+        return storageItem;
+    };
+
+if (LScart){
+    cart = JSON.parse(LScart);
+};
 
 // funcion para agregar al carrito
 function addCart(producto) {
@@ -59,6 +70,7 @@ function addCart(producto) {
     col5.addEventListener("click", (e) => {
         cartContent.removeChild(row);
         cartNav.removeChild(alertCart);
+        localStorage.removeItem('cart');
     });
     
     row.appendChild(col1);
@@ -68,6 +80,6 @@ function addCart(producto) {
     row.appendChild(col5);
 
     cartContent.appendChild(row);
-    cartTable.appendChild(cartContent);    
+    cartTable.appendChild(cartContent);   
 
 };

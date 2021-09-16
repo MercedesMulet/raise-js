@@ -36,14 +36,6 @@ function createCard(producto) {
     imageContainer.appendChild(imageElement);
     infoContainer.append(headingElement, paragraphElement, spanElement, btnElement);
 
-    let precio = `${producto.precio}`;
-
-    // funcion para guardar en storage
-    function saveOnStorage() {
-        let storageItem = localStorage.setItem('precio', precio);
-        return storageItem;
-    };
-
     // evento para boton agregar
     btnElement.addEventListener("click", (e) => {
         e.preventDefault();
@@ -51,7 +43,8 @@ function createCard(producto) {
         addCart(producto);
         saveOnStorage();
     });
-}
+
+};
 
 function completeCard() {
     listaProductos.forEach(producto => {
@@ -100,3 +93,5 @@ function handleChange(e) {
 
     e.preventDefault();
 };
+
+
