@@ -93,5 +93,3 @@ function handleChange(e) {
 
     e.preventDefault();
 };
-
-

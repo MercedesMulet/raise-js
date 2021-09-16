@@ -2,13 +2,13 @@
 let cart = [];
 const LScart = localStorage.getItem("cart")
 
-    // funcion para guardar en storage
-    function saveOnStorage() {
-        let storageItem = localStorage.setItem('cart', JSON.stringify(cart));
-        return storageItem;
-    };
+// funcion para guardar en storage
+function saveOnStorage() {
+    let storageItem = localStorage.setItem('cart', JSON.stringify(cart));
+    return storageItem;
+};
 
-if (LScart){
+if (LScart) {
     cart = JSON.parse(LScart);
 };
 
@@ -47,19 +47,6 @@ function addCart(producto) {
     // suma total SALE MAL
     let col4 = document.createElement("TD");
     col4.innerHTML = 0;
-    /* function multiplier(){
-        let value1 = parseInt(producto.precio);
-        let value2 = document.getElementById("productQty").value;
-        let result = value1 * value2;
-        console.log(result);
-    }
-    multiplier() */
-
-    /* let productQty = document.getElementById("productQty".value);
-    let productPrice = `${producto.precio}`;
-    let precioTotal = `${productQty * productPrice}`
-    col4.innerHTML = precioTotal;
-    console.log(precioTotal); */
 
     // creo botón para eliminar
     let col5 = document.createElement("i");
@@ -72,7 +59,7 @@ function addCart(producto) {
         cartNav.removeChild(alertCart);
         localStorage.removeItem('cart');
     });
-    
+
     row.appendChild(col1);
     row.appendChild(col2);
     row.appendChild(col3);
@@ -80,6 +67,6 @@ function addCart(producto) {
     row.appendChild(col5);
 
     cartContent.appendChild(row);
-    cartTable.appendChild(cartContent);   
+    cartTable.appendChild(cartContent);
 
 };
