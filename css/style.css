@@ -311,7 +311,7 @@ button {
   @media only screen and (min-width: 320px) and (max-width: 480px) {
     #testimonials {
       width: 100vw;
-      padding: 0;
+      padding: 2rem 0;
       display: flex;
       flex-direction: column; } }
   #testimonials .testimonial-btn {
@@ -337,27 +337,46 @@ button {
     display: flex;
     align-items: center;
     flex-direction: column; }
+    @media only screen and (min-width: 320px) and (max-width: 480px) {
+      #testimonials .card {
+        margin: 2rem 0; } }
     #testimonials .card img {
       width: 10rem;
       height: 10rem;
       object-fit: cover;
       border-radius: 5rem;
       margin: 2rem 0; }
+      @media only screen and (min-width: 320px) and (max-width: 480px) {
+        #testimonials .card img {
+          margin: 0;
+          margin-bottom: 1rem; } }
     #testimonials .card .card-body {
       width: 80%; }
+      @media only screen and (min-width: 320px) and (max-width: 480px) {
+        #testimonials .card .card-body {
+          width: 90%; } }
       #testimonials .card .card-body .card-id {
         font-family: "Clash display", sans-serif;
-        font-weight: 200;
+        font-weight: 300;
         font-size: 0.8rem; }
+        @media only screen and (min-width: 320px) and (max-width: 480px) {
+          #testimonials .card .card-body .card-id {
+            font-size: 1rem; } }
       #testimonials .card .card-body .card-title {
         font-family: "Clash display", sans-serif;
         font-weight: 600;
         font-size: 1rem; }
+        @media only screen and (min-width: 320px) and (max-width: 480px) {
+          #testimonials .card .card-body .card-title {
+            font-size: 1.2rem; } }
       #testimonials .card .card-body .card-text {
         font-family: "Clash display", sans-serif;
         font-weight: 200;
         font-size: 0.8rem;
         margin-top: 0.5rem; }
+        @media only screen and (min-width: 320px) and (max-width: 480px) {
+          #testimonials .card .card-body .card-text {
+            font-size: 1rem; } }
 
 /* PRODUCTOS */
 .banner-products {
