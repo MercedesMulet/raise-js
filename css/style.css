@@ -23,6 +23,9 @@ button {
 .container {
   width: 85%;
   margin: auto; }
+  @media only screen and (min-width: 320px) and (max-width: 480px) {
+    .container {
+      width: 90%; } }
 
 .top-btn {
   position: relative;
@@ -55,6 +58,9 @@ button {
   align-items: center;
   justify-content: flex-end;
   padding: 0.8rem 6rem; }
+  @media only screen and (min-width: 320px) and (max-width: 480px) {
+    .cart-bar {
+      padding: 0.8rem 1.2rem; } }
   .cart-bar .icons a {
     color: #056F72; }
     .cart-bar .icons a .social-icon {
@@ -86,19 +92,53 @@ button {
     flex: 1;
     justify-content: flex-end;
     margin-right: 1.8rem; }
+    @media only screen and (min-width: 320px) and (max-width: 480px) {
+      .nav-main .nav-menu {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background-color: #056F72;
+        text-align: left;
+        top: 7.2rem;
+        left: -100vw;
+        z-index: 2;
+        display: block;
+        transition: all .5s;
+        padding-top: 2rem; } }
     .nav-main .nav-menu li {
       cursor: pointer;
       padding: 1rem 1.7rem;
       text-transform: uppercase;
       font-size: 0.9rem;
       border-bottom: 3px transparent solid; }
+      @media only screen and (min-width: 320px) and (max-width: 480px) {
+        .nav-main .nav-menu li {
+          display: block;
+          font-size: 1.5rem; } }
       .nav-main .nav-menu li:hover {
-        border-bottom: 3px white solid; }
+        border-bottom: 3px white solid;
+        transition: .5s; }
+  .nav-main #check {
+    display: none; }
+    .nav-main #check:checked ~ .nav-menu {
+      left: 0; }
+  .nav-main .check-btn {
+    font-size: 2rem;
+    float: right;
+    line-height: 2rem;
+    cursor: pointer;
+    display: none; }
+    @media only screen and (min-width: 320px) and (max-width: 480px) {
+      .nav-main .check-btn {
+        display: block; } }
   .nav-main .nav-menu-right {
     font-size: 1.2rem;
     display: flex;
     align-items: center;
     justify-content: center; }
+    @media only screen and (min-width: 320px) and (max-width: 480px) {
+      .nav-main .nav-menu-right {
+        display: none; } }
     .nav-main .nav-menu-right:hover {
       opacity: 0.5; }
     .nav-main .nav-menu-right .search-input {
@@ -113,76 +153,121 @@ button {
   justify-content: space-between;
   align-items: center;
   padding: 5rem 0; }
+  @media only screen and (min-width: 320px) and (max-width: 480px) {
+    #hero {
+      flex-direction: column;
+      padding: 2rem 1.5rem;
+      width: 100%; } }
   #hero .img-hero {
     left: -600px;
     width: 50%; }
+    @media only screen and (min-width: 320px) and (max-width: 480px) {
+      #hero .img-hero {
+        width: 100%; } }
   #hero .heroContent {
     width: 36%;
     margin-right: 5rem; }
+    @media only screen and (min-width: 320px) and (max-width: 480px) {
+      #hero .heroContent {
+        width: 100%;
+        margin: 2rem 0; } }
     #hero .heroContent h1 {
       font-family: "Clash display", sans-serif;
       font-weight: 600;
       font-size: 3rem;
       line-height: 3.5rem;
       padding-bottom: 1rem; }
+      @media only screen and (min-width: 320px) and (max-width: 480px) {
+        #hero .heroContent h1 {
+          font-size: 2rem;
+          line-height: 2rem;
+          margin-top: 1rem; } }
     #hero .heroContent p {
       width: 400px;
       font-weight: 200;
       margin-bottom: 3rem;
       line-height: 1.5rem; }
-    #hero .heroContent .cta-hero .btn-one {
-      background-color: #f4c023;
-      border: 1px solid #f4c023;
-      padding: 0.8rem 1.2rem;
-      color: #056F72;
-      font-size: 0.9rem;
-      font-weight: 600;
-      transition: opacity .3s; }
-      #hero .heroContent .cta-hero .btn-one i {
-        margin-left: 0.5rem; }
-      #hero .heroContent .cta-hero .btn-one:hover {
-        opacity: 0.8; }
-    #hero .heroContent .cta-hero .btn-two {
-      background-color: transparent;
-      border: 1px solid #f4c023;
-      padding: 0.8rem 1.2rem;
-      color: #f4c023;
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin-left: 1rem;
-      transition: all .3s; }
-      #hero .heroContent .cta-hero .btn-two i {
-        margin-left: 0.5rem; }
-      #hero .heroContent .cta-hero .btn-two:hover {
-        background-color: white;
-        border: 1px solid white;
-        color: #056F72; }
+      @media only screen and (min-width: 320px) and (max-width: 480px) {
+        #hero .heroContent p {
+          width: 80%;
+          margin-bottom: 1.5rem; } }
+    #hero .heroContent .cta-hero {
+      display: flex; }
+      #hero .heroContent .cta-hero .btn-one {
+        background-color: #f4c023;
+        border: 1px solid #f4c023;
+        padding: 0.8rem 1.2rem;
+        color: #056F72;
+        font-size: 0.9rem;
+        font-weight: 600;
+        transition: opacity .3s; }
+        #hero .heroContent .cta-hero .btn-one i {
+          margin-left: 0.5rem; }
+          @media only screen and (min-width: 320px) and (max-width: 480px) {
+            #hero .heroContent .cta-hero .btn-one i {
+              display: none; } }
+        #hero .heroContent .cta-hero .btn-one:hover {
+          opacity: 0.8; }
+      #hero .heroContent .cta-hero .btn-two {
+        background-color: transparent;
+        border: 1px solid #f4c023;
+        padding: 0.8rem 1.2rem;
+        color: #f4c023;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-left: 1rem;
+        transition: all .3s; }
+        @media only screen and (min-width: 320px) and (max-width: 480px) {
+          #hero .heroContent .cta-hero .btn-two {
+            padding: 0.5rem 0.8rem; } }
+        #hero .heroContent .cta-hero .btn-two i {
+          margin-left: 0.5rem; }
+          @media only screen and (min-width: 320px) and (max-width: 480px) {
+            #hero .heroContent .cta-hero .btn-two i {
+              display: none; } }
+        #hero .heroContent .cta-hero .btn-two:hover {
+          background-color: white;
+          border: 1px solid white;
+          color: #056F72; }
 
 /* Section 'Products' */
 #productsSection {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
   background-color: white;
   width: 100vw;
   height: 30rem;
   padding: 3rem 0; }
+  @media only screen and (min-width: 320px) and (max-width: 480px) {
+    #productsSection {
+      flex-direction: column;
+      height: auto; } }
   #productsSection .card-home {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 50px; }
+    @media only screen and (min-width: 320px) and (max-width: 480px) {
+      #productsSection .card-home {
+        padding: 1rem 0; } }
     #productsSection .card-home img {
       width: 300px;
       margin-bottom: 1.5rem;
       border-bottom: 8px #f4c023 solid; }
+      @media only screen and (min-width: 320px) and (max-width: 480px) {
+        #productsSection .card-home img {
+          width: 90%;
+          margin-bottom: 1rem; } }
     #productsSection .card-home h2 {
       width: 300px;
       color: #056F72;
       font-size: 1.5rem;
       font-weight: 600; }
+      @media only screen and (min-width: 320px) and (max-width: 480px) {
+        #productsSection .card-home h2 {
+          width: 90%; } }
 
 /* Banner Section */
 #bannerSearcher {
@@ -197,6 +282,9 @@ button {
     font-family: "Clash display", sans-serif;
     font-weight: 600;
     font-size: 2rem; }
+    @media only screen and (min-width: 320px) and (max-width: 480px) {
+      #bannerSearcher h3 {
+        width: 90%; } }
   #bannerSearcher .searcher-bar {
     cursor: pointer;
     width: 50%;
@@ -206,6 +294,10 @@ button {
     border: none;
     font-family: "Rubik", sans-serif;
     font-size: 1rem; }
+    @media only screen and (min-width: 320px) and (max-width: 480px) {
+      #bannerSearcher .searcher-bar {
+        width: 90%;
+        margin-bottom: 1rem; } }
 
 /* Testimonials Section */
 #testimonials {
@@ -216,6 +308,12 @@ button {
   min-height: 200px;
   text-align: center;
   padding: 3rem; }
+  @media only screen and (min-width: 320px) and (max-width: 480px) {
+    #testimonials {
+      width: 100vw;
+      padding: 0;
+      display: flex;
+      flex-direction: column; } }
   #testimonials .testimonial-btn {
     background-color: transparent;
     border: 1px solid #f4c023;
@@ -223,9 +321,12 @@ button {
     color: #f4c023;
     font-size: 1.2rem;
     font-weight: 600;
-    margin-left: 1rem;
     transition: all .3s;
     grid-column: 2/3; }
+    @media only screen and (min-width: 320px) and (max-width: 480px) {
+      #testimonials .testimonial-btn {
+        width: 90vw;
+        margin-top: 2rem; } }
     #testimonials .testimonial-btn i {
       margin-left: 0.5rem; }
     #testimonials .testimonial-btn:hover {

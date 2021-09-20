@@ -5,14 +5,29 @@
     align-items: center;
     padding: 5rem 0;
 
+    @media only screen and (min-width : 320px) and (max-width : 480px) {
+        flex-direction: column;
+        padding: 2rem 1.5rem;
+        width: 100%;
+    } 
+
     .img-hero {
         left: -600px;
         width: 50%;
+
+        @media only screen and (min-width : 320px) and (max-width : 480px) {
+            width: 100%;
+        } 
     }
 
     .heroContent {
         width: 36%;
         margin-right: 5rem;
+
+        @media only screen and (min-width : 320px) and (max-width : 480px) {
+           width: 100%;
+           margin: 2rem 0;
+        } 
 
         h1 {
             font-family: "Clash display", sans-serif;
@@ -20,6 +35,12 @@
             font-size: 3rem;
             line-height: 3.5rem;
             padding-bottom: 1rem;
+
+            @media only screen and (min-width : 320px) and (max-width : 480px) {
+                font-size: 2rem;
+                line-height: 2rem;
+                margin-top: 1rem;
+            } 
         }
 
         p {
@@ -27,9 +48,16 @@
             font-weight: 200;
             margin-bottom: 3rem;
             line-height: 1.5rem;
+
+            @media only screen and (min-width : 320px) and (max-width : 480px) {
+                width: 80%;
+                margin-bottom: 1.5rem;
+            } 
         }
 
         .cta-hero {
+            display: flex;
+
             .btn-one {
                 background-color: #f4c023;
                 border: 1px solid #f4c023;
@@ -41,11 +69,16 @@
 
                 i {
                     margin-left: 0.5rem;
+
+                    @media only screen and (min-width : 320px) and (max-width : 480px) {
+                        display: none;
+                    } 
                 }
 
                 &:hover {
                     opacity: 0.8;
                 }
+                
             }
 
             .btn-two {
@@ -58,8 +91,16 @@
                 margin-left: 1rem;
                 transition: all .3s;
 
+                @media only screen and (min-width : 320px) and (max-width : 480px) {
+                    padding: 0.5rem 0.8rem;
+                } 
+
                 i {
                     margin-left: 0.5rem;
+
+                    @media only screen and (min-width : 320px) and (max-width : 480px) {
+                        display: none;
+                    } 
                 }
 
                 &:hover {
@@ -78,11 +119,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
     background-color: rgb(255, 255, 255);
     width: 100vw;
     height: 30rem;
     padding: 3rem 0;
+
+    @media only screen and (min-width : 320px) and (max-width : 480px) {
+        flex-direction: column;
+        height: auto;
+    } 
 
     .card-home {
         display: flex;
@@ -91,10 +136,19 @@
         justify-content: center;
         padding: 50px;
 
+        @media only screen and (min-width : 320px) and (max-width : 480px) {
+            padding: 1rem 0;
+        } 
+
         img {
             width: 300px;
             margin-bottom: 1.5rem;
             border-bottom: 8px #f4c023 solid;
+
+            @media only screen and (min-width : 320px) and (max-width : 480px) {
+                width: 90%;
+                margin-bottom: 1rem;
+            } 
         }
 
         h2 {
@@ -102,6 +156,10 @@
             color: #056F72;
             font-size: 1.5rem;
             font-weight: 600;
+
+            @media only screen and (min-width : 320px) and (max-width : 480px) {
+                width: 90%;
+            } 
         }
     }
 }
@@ -121,6 +179,10 @@
         font-family: "Clash display", sans-serif;
         font-weight: 600;
         font-size: 2rem;
+
+        @media only screen and (min-width : 320px) and (max-width : 480px) {
+            width: 90%;
+        } 
     }
 
     .searcher-bar {
@@ -132,6 +194,11 @@
         border: none;
         font-family: "Rubik", sans-serif;
         font-size: 1rem;
+
+        @media only screen and (min-width : 320px) and (max-width : 480px) {
+            width: 90%;
+            margin-bottom: 1rem;
+        } 
     }
 }
 
@@ -145,6 +212,13 @@
     text-align: center;
     padding: 3rem;
 
+    @media only screen and (min-width : 320px) and (max-width : 480px) {
+        width: 100vw;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    } 
+
     .testimonial-btn {
         background-color: transparent;
         border: 1px solid #f4c023;
@@ -152,9 +226,13 @@
         color: #f4c023;
         font-size: 1.2rem;
         font-weight: 600;
-        margin-left: 1rem;
         transition: all .3s;
         grid-column: 2/3;
+
+        @media only screen and (min-width : 320px) and (max-width : 480px) {
+            width: 90vw;
+            margin-top: 2rem;
+        } 
 
         i {
             margin-left: 0.5rem;

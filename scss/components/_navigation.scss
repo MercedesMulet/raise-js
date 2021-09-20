@@ -16,6 +16,20 @@
         justify-content: flex-end;
         margin-right: 1.8rem;
 
+        @media only screen and (min-width : 320px) and (max-width : 480px) {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background-color: #056F72;
+            text-align: left;
+            top: 7.2rem;
+            left: -100vw;
+            z-index: 2;
+            display: block;
+            transition: all .5s;
+            padding-top: 2rem;
+        } 
+
         li {
             cursor: pointer;
             padding: 1rem 1.7rem;
@@ -23,10 +37,36 @@
             font-size: 0.9rem;
             border-bottom: 3px transparent solid;
 
+            @media only screen and (min-width : 320px) and (max-width : 480px) {
+                display: block;
+                font-size: 1.5rem;
+            } 
+
             &:hover {
                 border-bottom: 3px white solid;
+                transition: .5s;
             }
         }
+    }
+
+    #check {
+        display: none;
+
+        &:checked ~ .nav-menu{
+            left: 0;
+        }
+    }
+
+    .check-btn {
+        font-size: 2rem;
+        float: right;
+        line-height: 2rem;
+        cursor: pointer;
+        display: none;
+
+        @media only screen and (min-width : 320px) and (max-width : 480px) {
+            display: block;
+        } 
     }
 
     .nav-menu-right {
@@ -34,6 +74,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
+
+        @media only screen and (min-width : 320px) and (max-width : 480px) {
+            display: none;
+        } 
 
         &:hover {
             opacity: 0.5;
