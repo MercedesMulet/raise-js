@@ -98,7 +98,6 @@ function addCart(producto) {
     };
 
     // total SALE MAL
-
     let totalCart = localStorage.getItem(`$${producto.precio}`);
 
     let totalRow = document.createElement('TR');
