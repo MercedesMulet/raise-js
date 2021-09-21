@@ -47,9 +47,13 @@ function addCart(producto) {
     let plus = document.createElement('button');
 
     minus.innerHTML = '-';
-    minus.onclick = function() {decrease()};
-    plus.innerHTML = '+'; 
-    plus.onclick = function() {increase()};
+    minus.onclick = function () {
+        decrease()
+    };
+    plus.innerHTML = '+';
+    plus.onclick = function () {
+        increase()
+    };
 
     counter.type = 'text';
     counter.id = 'productQty';
@@ -57,12 +61,14 @@ function addCart(producto) {
     counter.min = parseInt('1');
     counter.max = parseInt('5');
     counter.name = 'productQty';
+    counter.disabled = true;
 
     function decrease() {
         if (counter.value == 1) {
             return
         } else {
-            counter.value--
+            counter.value--;
+            getResume();
         }
     };
 
@@ -70,33 +76,40 @@ function addCart(producto) {
         if (counter.value == 5) {
             return
         } else {
-            counter.value++
+            counter.value++;
+            getResume();
         }
-    }
+    };
 
     col3.appendChild(minus);
     col3.appendChild(counter);
     col3.appendChild(plus);
 
-    console.log(counter.value);
+    // subtotal 
+    let col4 = document.createElement("TD");
+    let resume = producto.precio * 1;
+    col4.innerHTML = `$${resume}`;
 
-    /* 
-
-    var inputVal = document.getElementById('productQty');
-    inputVal.onclick = function getValue() {
-        counter.value++;
+    function getResume(e) {
+        resume = producto.precio * counter.value;
+        col4.innerHTML = `$${resume}`;
     };
 
-    console.log(counter.id);
-    console.log(counter.value);
-    console.log(inputVal); */
+    // total SALE MAL
+    /* function getTotal() {
+        for (let i = 1; i <= 5; i++) {
+            let totalCart = document.getElementById('totalCart');
+            let totalResume = resume[0] + resume[1] + resume[2] + resume[3] + resume[4];
+            totalCart.innerHTML = `$${totalResume}`;
+            console.log(totalResume);
+        }
+    }; */
 
-    // suma total SALE MAL
-    let col4 = document.createElement("TD");
-    col4.innerHTML = '0';
-    /* let resume = producto.precio * counter.value;
-    console.log(resume);
-    col4.innerHTML = `$${resume}`; */
+    /*     function totalCart() {
+            let totalCart = document.getElementById('totalCart');
+            totalCart.innerHTML = `$${totalResume}`;
+            let totalResume = resume + resume;
+        }; */
 
     // botón para eliminar item del carrito
     let col5 = document.createElement("i");
@@ -107,9 +120,11 @@ function addCart(producto) {
     col5.addEventListener("click", (e) => {
         cartContent.removeChild(row);
         cartNav.removeChild(alertCart);
+        // SALE MAL
         localStorage.removeItem('cart');
     });
 
+    // agrego todo al dom
     row.appendChild(col1);
     row.appendChild(col2);
     row.appendChild(col3);
@@ -118,7 +133,5 @@ function addCart(producto) {
 
     cartContent.appendChild(row);
     cartTable.appendChild(cartContent);
-
-    
 
 };
