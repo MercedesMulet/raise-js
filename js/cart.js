@@ -34,9 +34,11 @@ function addCart(producto) {
 
     let row = document.createElement("TR");
 
+    // nombre producto
     let col1 = document.createElement("TD");
     col1.innerHTML = `${producto.categoria}<br>${producto.codigoRaise}`;
 
+    // precio producto
     let col2 = document.createElement("TD");
     col2.innerHTML = `$${producto.precio}`;
 
@@ -96,14 +98,47 @@ function addCart(producto) {
     };
 
     // total SALE MAL
-    /* function getTotal() {
-        for (let i = 1; i <= 5; i++) {
-            let totalCart = document.getElementById('totalCart');
-            let totalResume = resume[0] + resume[1] + resume[2] + resume[3] + resume[4];
-            totalCart.innerHTML = `$${totalResume}`;
-            console.log(totalResume);
+
+    let totalCart = localStorage.getItem(`$${producto.precio}`);
+
+    let totalRow = document.createElement('TR');
+
+    let totalCell = document.createElement('TD');
+    let txtTotalCell = document.createTextNode('Total:');
+    totalCell.appendChild(txtTotalCell);
+    totalRow.appendChild(totalCell);
+
+    let totalValueCell = document.createElement('TD');
+    let txtTotalValueCell = document.createTextNode(`$${totalCart}`);
+    totalValueCell.appendChild(txtTotalValueCell);
+    totalRow.appendChild(totalValueCell);
+
+/*     function getTotal() {
+        let totalResume = `$${resume}`;
+
+        let resumeCell = document.querySelectorAll('td + td + td + td');//aca me pierdo
+
+        for(let i=0; i<resumeCell; ++i){
+            totalResume += resumeCell[i].firstChild.data;
         }
+
+        let totalRow = document.createElement('tr');
+
+        let totalCell = document.createElement('td');
+        let txtTotalCell = document.createTextNode('Total:');
+        totalCell.appendChild(txtTotalCell);
+        totalRow.appendChild(totalCell);
+
+        let totalValueCell = document.createElement('td');
+        let txtTotalValueCell = document.createTextNode(totalResume);
+        totalValueCell.appendChild(txtTotalValueCell);
+        totalRow.appendChild(totalValueCell);
     }; */
+    
+    /* let totalCart = document.getElementById('totalCart');
+    let totalResume = resume[0] + resume[1] + resume[2] + resume[3] + resume[4];
+    totalCart.innerHTML = `$${totalResume}`;
+    console.log(parseInt(totalResume)); */
 
     /*     function totalCart() {
             let totalCart = document.getElementById('totalCart');
@@ -124,14 +159,14 @@ function addCart(producto) {
         localStorage.removeItem('cart');
     });
 
-    // agrego todo al dom
+    // agrego todo a la tabla
     row.appendChild(col1);
     row.appendChild(col2);
     row.appendChild(col3);
     row.appendChild(col4);
     row.appendChild(col5);
 
-    cartContent.appendChild(row);
+    cartContent.append(row, totalRow);
     cartTable.appendChild(cartContent);
 
-};
+    };
