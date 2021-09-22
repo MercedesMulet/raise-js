@@ -30,23 +30,36 @@
             height: auto;
             margin-bottom: 2rem;
 
-            p {
-                line-height: 1.5rem;
+            .cart-table {
+                text-align: center;
+                td {
+                    border-bottom: 1px dotted white;
+                    padding: 1rem 0;
 
-                .delete-item {
-                    margin-left: 1rem;
-                    cursor: pointer;
+                    i {
+                        cursor: pointer;
+                        align-items: center;
+                    }
                 }
-            }
 
-
-            th {
-                font-size: 0.8rem;
-                padding-right: 0.5rem;
-            }
-
-            #productQty {
-                width: 2rem;
+                p {
+                    line-height: 1.5rem;
+    
+                    .delete-item {
+                        margin-left: 1rem;
+                        cursor: pointer;
+                    }
+                }
+    
+                th {
+                    font-size: 0.8rem;
+                    padding-right: 0.5rem;
+                }
+    
+                .productQty {
+                    text-align: center;
+                    width: 1.2rem;
+                }
             }
         }
 

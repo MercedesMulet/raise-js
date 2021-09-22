@@ -440,16 +440,25 @@ button {
     .ecom .aside .cart-list {
       height: auto;
       margin-bottom: 2rem; }
-      .ecom .aside .cart-list p {
-        line-height: 1.5rem; }
-        .ecom .aside .cart-list p .delete-item {
-          margin-left: 1rem;
-          cursor: pointer; }
-      .ecom .aside .cart-list th {
-        font-size: 0.8rem;
-        padding-right: 0.5rem; }
-      .ecom .aside .cart-list #productQty {
-        width: 2rem; }
+      .ecom .aside .cart-list .cart-table {
+        text-align: center; }
+        .ecom .aside .cart-list .cart-table td {
+          border-bottom: 1px dotted white;
+          padding: 1rem 0; }
+          .ecom .aside .cart-list .cart-table td i {
+            cursor: pointer;
+            align-items: center; }
+        .ecom .aside .cart-list .cart-table p {
+          line-height: 1.5rem; }
+          .ecom .aside .cart-list .cart-table p .delete-item {
+            margin-left: 1rem;
+            cursor: pointer; }
+        .ecom .aside .cart-list .cart-table th {
+          font-size: 0.8rem;
+          padding-right: 0.5rem; }
+        .ecom .aside .cart-list .cart-table .productQty {
+          text-align: center;
+          width: 1.2rem; }
     .ecom .aside hr {
       width: 20rem;
       margin-bottom: 2rem; }
