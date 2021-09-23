@@ -4,7 +4,7 @@
     grid-template-columns: 1fr 3fr;
     grid-gap: 1rem;
     grid-row: 1rem;
-    width: 90%;
+    width: 95%;
     margin: auto;
     padding: 3rem 0;
 
@@ -32,14 +32,6 @@
 
             .cart-table {
                 text-align: center;
-
-                thead {
-                    display: flex;
-                    align-items: center;
-                    height: 2rem;
-                    background-color: rgba(255,255,255,0.2);
-                }
-                
 
                 td {
                     border-bottom: 1px dotted white;
@@ -72,8 +64,9 @@
                 }
     
                 th {
+                    background-color: rgba(255,255,255,0.2);
                     font-size: 0.8rem;
-                    padding-right: 0.5rem;
+                    padding: 1rem 0.4rem;
                 }
     
                 .productQty {
@@ -88,7 +81,7 @@
             justify-content: center;
             align-items: center;
             padding: 1rem 0;
-            width: 20rem;
+            width: 21.5rem;
             background-color: rgba(255,255,255,0.2);
 
             p {
@@ -98,7 +91,7 @@
         }
 
         hr {
-            width: 20rem;
+            width: 21.5rem;
             margin-bottom: 2rem;
         }
 

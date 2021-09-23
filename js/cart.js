@@ -1,5 +1,6 @@
 // array para carrito
 let cart = [];
+
 const LScart = localStorage.getItem("cart");
 
 // funcion para guardar en storage
@@ -11,7 +12,8 @@ function saveOnStorage() {
 if (LScart) {
     cart = JSON.parse(LScart);
     cart.map(producto => {
-        ////// CREAR FUNCION
+        
+        ////// CREAR FUNCION sale mal
         
         // icono plus carrito en el nav
         let cartNav = document.getElementById("cartNav");
@@ -110,10 +112,7 @@ if (LScart) {
             let resumeVal = []; 
             let valResume = document.getElementsByClassName('resumeVal');
             resumeVal.push(valResume);
-            console.log(valResume);
         }; 
-
-        
 
         // botón para eliminar item del carrito
         let col5 = document.createElement("TD");

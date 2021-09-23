@@ -8,7 +8,9 @@ body {
   background-color: #056F72;
   color: white;
   font-size: 16px;
-  font-family: 'Rubik', sans-serif; }
+  font-family: 'Rubik', sans-serif;
+  width: 100%;
+  overflow-x: hidden; }
 
 a {
   color: white;
@@ -421,7 +423,7 @@ button {
   grid-template-columns: 1fr 3fr;
   grid-gap: 1rem;
   grid-row: 1rem;
-  width: 90%;
+  width: 95%;
   margin: auto;
   padding: 3rem 0; }
   @media only screen and (min-width: 320px) and (max-width: 480px) {
@@ -442,11 +444,6 @@ button {
       margin-bottom: 2rem; }
       .ecom .aside .cart-list .cart-table {
         text-align: center; }
-        .ecom .aside .cart-list .cart-table thead {
-          display: flex;
-          align-items: center;
-          height: 2rem;
-          background-color: rgba(255, 255, 255, 0.2); }
         .ecom .aside .cart-list .cart-table td {
           border-bottom: 1px dotted white;
           padding: 1rem 0; }
@@ -468,8 +465,9 @@ button {
             margin-left: 1rem;
             cursor: pointer; }
         .ecom .aside .cart-list .cart-table th {
+          background-color: rgba(255, 255, 255, 0.2);
           font-size: 0.8rem;
-          padding-right: 0.5rem; }
+          padding: 1rem 0.4rem; }
         .ecom .aside .cart-list .cart-table .productQty {
           text-align: center;
           width: 1.2rem; }
@@ -478,13 +476,13 @@ button {
       justify-content: center;
       align-items: center;
       padding: 1rem 0;
-      width: 20rem;
+      width: 21.5rem;
       background-color: rgba(255, 255, 255, 0.2); }
       .ecom .aside .total-row p {
         font-size: 1rem;
         margin-right: 1rem; }
     .ecom .aside hr {
-      width: 20rem;
+      width: 21.5rem;
       margin-bottom: 2rem; }
     .ecom .aside .filter-list {
       display: flex;
