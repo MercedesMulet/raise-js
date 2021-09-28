@@ -43,7 +43,6 @@ function createCard(producto) {
         addCart(producto);
         saveOnStorage();
     });
-
 };
 
 function completeCard() {
