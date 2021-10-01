@@ -7,13 +7,6 @@ const LScart = localStorage.getItem("cart");
 if (LScart) {
     cart = JSON.parse(LScart);
     cart.map(producto => {
-            // icono plus carrito en el nav
-            let cartNav = document.getElementById("cartNav");
-            let alertCart = document.createElement("i");
-            alertCart.className = "alert-cart";
-            alertCart.innerHTML = `<i class="fas fa-plus-circle"></i>`;
-            cartNav.appendChild(alertCart);
-
             // agrego los productos seleccionados al carrito
             cart.push({
                 categoria: producto.categoria,
@@ -21,6 +14,9 @@ if (LScart) {
                 precio: producto.precio,
                 cantidad: 1,
             });
+
+            freshSubTotal(producto);
+            showTotal();
 
             // creo la tabla para el carrito
             let cartTable = document.getElementById("cartTable");
@@ -153,6 +149,23 @@ if (LScart) {
         return storageItem;
     };
 
+    function freshSubTotal(producto) {
+        let subDos = document.getElementById(`${producto.codigoRaise}-sub`);
+        subDos.innerHTML = `$${getResume()}`;
+    };
+    
+    
+
+    function showTotal() {
+        let total = 0;
+        cart.map(producto => {
+            total += priceAcum(producto, producto.cantidad);
+        })
+        totalCart.innerHTML = `$${total}`;
+    };
+
+   
+
     // funcion para agregar al carrito
     function addCart(producto) {
 
@@ -182,6 +195,9 @@ if (LScart) {
                 precio: producto.precio,
                 cantidad: 1,
             });
+
+            freshSubTotal(producto);
+            showTotal();
 
             // creo la tabla para el carrito
             let cartTable = document.getElementById("cartTable");
