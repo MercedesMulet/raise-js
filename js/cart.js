@@ -176,7 +176,6 @@ function addAndShowCart(producto) {
 
 // funcion boton comprar
 function purchaseBtnClicked() {
-    if (cart.lenght >= 0) {
         let cartContent = document.getElementById("cartContent");
         cartContent.innerHTML= "";
         cart = [];
@@ -184,8 +183,4 @@ function purchaseBtnClicked() {
         let total = 0;
         let totalCart = document.getElementById('totalCart');
         totalCart.innerHTML = `$${total}`;
-    } else {
-        alert("Error. Por favor, agregar productos al carrito.");
-        purchaseBtnClicked.prop('disabled', true); 
-    };
 };
