@@ -444,6 +444,7 @@ button {
             cursor: pointer;
             align-items: center; }
           .ecom .aside .cart-list .cart-table td button {
+            background-color: white;
             width: 1rem;
             height: 1rem;
             border-radius: 1rem;
