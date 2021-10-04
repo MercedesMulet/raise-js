@@ -30,6 +30,34 @@
             height: auto;
             margin-bottom: 2rem;
 
+            #cartContent {
+
+                #rowDos {
+    
+                    #purchaseBtn {
+                        background-color: #f4c023;
+                        width: 4rem;
+                        padding: 0.5rem 0;
+                        color: black;
+                        font-size: 0.8rem;
+                        font-weight: 400;
+                        border: none;
+                        border-radius: 0.3rem;
+                        box-shadow: 1px 2px 1rem rgba(0, 0, 0, .1);
+                        transition: background-color .3s;
+    
+                        @media only screen and (min-width : 320px) and (max-width : 480px) {
+                            font-size: 1.1rem;
+                            padding: 0.8rem 1.5rem;
+                        }
+    
+                        &:hover {
+                            background-color: #dbaf29;
+                        }
+                    }
+                }
+            }
+
             .cart-table {
                 text-align: center;
 
@@ -88,33 +116,6 @@
             p {
                 font-size: 1rem;
                 margin-right: 1rem;
-            }
-        }
-
-        .purchase {
-
-            button {
-                display: inline-block;
-                background-color: #f4c023;
-                width: 21.5rem;
-                padding: 1rem 0;
-                color: black;
-                font-size: 1rem;
-                font-weight: 400;
-                margin-top: 1rem;
-                border: none;
-                border-radius: 0.3rem;
-                box-shadow: 1px 2px 1rem rgba(0, 0, 0, .1);
-                transition: background-color .3s;
-
-                @media only screen and (min-width : 320px) and (max-width : 480px) {
-                    font-size: 1.1rem;
-                    padding: 0.8rem 1.5rem;
-                }
-
-                &:hover {
-                    background-color: #dbaf29;
-                }
             }
         }
 

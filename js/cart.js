@@ -149,10 +149,16 @@ function addAndShowCart(producto) {
     // evento eliminar
     col5.addEventListener("click", (e) => {
         cartContent.removeChild(row);
-        //filtro el array cart por los que sean distintos al que estoy removiendo
+        // filtro el array cart por los que sean distintos al que estoy removiendo
         cart = cart.filter(prod => prod.codigoRaise !== producto.codigoRaise);
         saveOnStorage();
         freshTotal();
+        // eliminar boton comprar
+        if (cart.length === 0) {
+            let row2 = document.getElementById('rowDos');
+            let purchBtn = document.getElementById('purchBtn');
+            row2.removeChild(purchBtn);
+        };
     });
 
     // agrego todo a la tabla
@@ -162,34 +168,33 @@ function addAndShowCart(producto) {
     row.appendChild(col4);
     row.appendChild(col5);
 
+     // render del boton comprar
+     if (cart.length === 1) {
+        let row2 = document.createElement('TR');
+        row2.setAttribute('id', 'rowDos');
+        let purchaseBtn = document.createElement('a');
+        purchaseBtn.setAttribute('id', 'purchBtn');
+        purchaseBtn.innerHTML = `<button id="purchaseBtn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Comprar</button>`
+        purchaseBtn.addEventListener("click", purchaseBtnClicked);
+        row2.appendChild(purchaseBtn);
+        cartContent.appendChild(row2);
+    }
+
     cartContent.appendChild(row);
     cartTable.appendChild(cartContent);
 
     freshSubTotal(producto);
     freshTotal();
+};
 
-    // boton comprar
-    if (cart.length === 1) {
-        const purchaseDiv = document.getElementById('purchaseDiv');
-        const purchaseBtn = document.createElement('a');
-
-        purchaseBtn.innerHTML = `<button id="purchaseBtn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Comprar</button>`
-
-        purchaseBtn.addEventListener("click", purchaseBtnClicked);
-
-        purchaseDiv.appendChild(purchaseBtn);
-    };
-
-
-    // funcion boton comprar
-    function purchaseBtnClicked() {
-        let cartContent = document.getElementById("cartContent");
-        cartContent.innerHTML = "";
-        cart = [];
-        saveOnStorage();
-        let total = 0;
-        let totalCart = document.getElementById('totalCart');
-        totalCart.innerHTML = `$${total}`;
-        purchaseDiv.innerHTML = "";
-    };
+// funcion boton comprar
+function purchaseBtnClicked() {
+    let cartContent = document.getElementById("cartContent");
+    cartContent.innerHTML = "";
+    cart = [];
+    saveOnStorage();
+    let total = 0;
+    let totalCart = document.getElementById('totalCart');
+    totalCart.innerHTML = `$${total}`;
+    purchaseDiv.innerHTML = "";
 };
