@@ -169,26 +169,27 @@ function addAndShowCart(producto) {
     freshTotal();
 
     // boton comprar
-    if (cart.length == 1) {
+    if (cart.length === 1) {
+        const purchaseDiv = document.getElementById('purchaseDiv');
+        const purchaseBtn = document.createElement('a');
 
-    const purchaseDiv = document.getElementById('purchaseDiv');
-    const purchaseBtn = document.createElement('a');
+        purchaseBtn.innerHTML = `<button id="purchaseBtn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Comprar</button>`
 
-    purchaseBtn.innerHTML = `<button id="purchaseBtn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Comprar</button>`
+        purchaseBtn.addEventListener("click", purchaseBtnClicked);
 
-    purchaseBtn.addEventListener("click", purchaseBtnClicked);
-
-    purchaseDiv.appendChild(purchaseBtn);
+        purchaseDiv.appendChild(purchaseBtn);
     };
+
 
     // funcion boton comprar
     function purchaseBtnClicked() {
         let cartContent = document.getElementById("cartContent");
-        cartContent.innerHTML= "";
+        cartContent.innerHTML = "";
         cart = [];
         saveOnStorage();
         let total = 0;
         let totalCart = document.getElementById('totalCart');
         totalCart.innerHTML = `$${total}`;
+        purchaseDiv.innerHTML = "";
     };
 };
