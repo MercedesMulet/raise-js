@@ -1,5 +1,6 @@
 let ecomSection = document.getElementById("ecomSection");
 
+//funcion para crear tarjetas en dom
 function createCard(producto) {
     let cardElement = document.createElement('div');
     let imageContainer = document.createElement('div');
@@ -24,6 +25,7 @@ function createCard(producto) {
 
     headingElement.innerHTML = `${producto.codigoRaise}`;
     paragraphElement.innerHTML = `<b>${producto.categoria}</b><br>
+    ${producto.tipoLlaves}<br>
     Ref.: ${producto.referencia}<br>
     Material: ${producto.material}<br>
     Para máquinas: ${producto.modeloMaquina}<br>
@@ -54,7 +56,7 @@ function completeCard() {
 
 completeCard();
 
-// funcion para aplicar filtros
+// filtros
 
 function filterProducts(array) {
     array.forEach(producto => {
@@ -62,34 +64,30 @@ function filterProducts(array) {
     });
 };
 
-let filterOpt = document.querySelectorAll('input[type="checkbox"]');
+let filterOpt = document.querySelectorAll('input[type="radio"]');
 
 filterOpt.forEach(check => check.addEventListener("change", handleChange));
 
 function handleChange(e) {
+    e.preventDefault();
+    
     ecomSection.innerHTML = "";
 
-    const checkeds = Array.from(filterOpt).filter(checkbox => checkbox.checked);
+    const checkeds = Array.from(filterOpt).filter(radio => radio.checked);
 
-    const checkedValue = checkeds.map(checkbox => checkbox.value);
+    const checkedValue = checkeds.map(radio => radio.value);
 
     let filteredArray = "";
-
-    if (checkedValue == "disco") {
+    
+    if (checkedValue == "discos") {
         filteredArray = listaProductos.filter(item => item.categoria == "Disco");
-    } else if (checkedValue == "cortador-punto") {
-        filteredArray = listaProductos.filter(item => item.categoria == "Cortador (Llaves de Punto)");
-    } else if (checkedValue == "cortador-regata") {
-        filteredArray = listaProductos.filter(item => item.categoria == "Cortador (Llaves de Regata)");
-    } else if (checkedValue == "guia-punto") {
-        filteredArray = listaProductos.filter(item => item.categoria == "Guía para Cortador (Punto)");
-    } else if (checkedValue == "guia-regata") {
-        filteredArray = listaProductos.filter(item => item.categoria == "Guía para Cortador (Regata)");
+    } else if (checkedValue == "cortadores") {
+        filteredArray = listaProductos.filter(item => item.categoria == "Cortador");
+    } else if (checkedValue == "guias") {
+        filteredArray = listaProductos.filter(item => item.categoria == "Guía");
     } else {
-        filteredArray = listaProductos;
+        filteredArray = listaProductos
     };
 
     filterProducts(filteredArray);
-
-    e.preventDefault();
 };
