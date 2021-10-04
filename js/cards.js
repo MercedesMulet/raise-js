@@ -39,8 +39,9 @@ function createCard(producto) {
     // evento para boton agregar
     btnElement.addEventListener("click", (e) => {
         e.preventDefault();
-        console.log(`Elegiste el cortador: ${producto.codigoRaise}`);
         addCart(producto);
+        freshSubTotal(producto);
+        freshTotal();
         saveOnStorage();
     });
 };
