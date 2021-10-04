@@ -72,13 +72,6 @@ button {
   .cart-bar .icons .cart-icon {
     margin-left: 1.5rem;
     font-size: 1.2rem; }
-  .cart-bar .icons .alert-cart {
-    color: #17ff17;
-    position: absolute;
-    right: 4.2rem;
-    top: 0.8rem; }
-    .cart-bar .icons .alert-cart i {
-      font-size: 0.9rem; }
 
 /* NAVIGATION */
 .nav-main {
@@ -481,6 +474,25 @@ button {
       .ecom .aside .total-row p {
         font-size: 1rem;
         margin-right: 1rem; }
+    .ecom .aside .purchase button {
+      display: inline-block;
+      background-color: #f4c023;
+      width: 21.5rem;
+      padding: 1rem 0;
+      color: black;
+      font-size: 1rem;
+      font-weight: 400;
+      margin-top: 1rem;
+      border: none;
+      border-radius: 0.3rem;
+      box-shadow: 1px 2px 1rem rgba(0, 0, 0, 0.1);
+      transition: background-color .3s; }
+      @media only screen and (min-width: 320px) and (max-width: 480px) {
+        .ecom .aside .purchase button {
+          font-size: 1.1rem;
+          padding: 0.8rem 1.5rem; } }
+      .ecom .aside .purchase button:hover {
+        background-color: #dbaf29; }
     .ecom .aside hr {
       width: 21.5rem;
       margin-bottom: 2rem; }
@@ -568,6 +580,57 @@ button {
             padding: 0.8rem 1.5rem; } }
         .ecom .ecom-section .card .add-btn:hover {
           background-color: #dbaf29; }
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100%;
+  overflow: auto;
+  background-color: #056F72;
+  background-color: rgba(0, 0, 0, 0.4); }
+  .modal .modal-content {
+    background-color: white;
+    color: #056F72;
+    margin: 15%;
+    padding: 2rem 2rem 1rem;
+    width: 60%;
+    border-radius: 1rem; }
+    .modal .modal-content h5 {
+      font-family: "Clash display", sans-serif;
+      font-weight: 500;
+      font-size: 1.8rem;
+      margin-bottom: 1rem; }
+    .modal .modal-content .closeIcon {
+      background-color: white;
+      color: #056F72;
+      float: right;
+      font-size: 2rem;
+      cursor: pointer;
+      border: none;
+      transition: opacity .3s; }
+      .modal .modal-content .closeIcon:hover {
+        opacity: 0.5; }
+    .modal .modal-content .modal-body {
+      font-size: 1.1rem;
+      margin-bottom: 1rem; }
+    .modal .modal-content .btn-cerrar {
+      border: 1px solid #056F72;
+      background-color: white;
+      border-radius: .5rem;
+      margin: 1rem 0;
+      padding: 0.6rem 1.2rem;
+      color: #056F72;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: opacity .5s; }
+      .modal .modal-content .btn-cerrar:hover {
+        background-color: #056F72;
+        opacity: 0.8;
+        color: white; }
 
 #footer {
   position: relative;

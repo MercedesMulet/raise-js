@@ -13,7 +13,7 @@
         flex-direction: column;
         width: 85%;
         padding: 2rem 0;
-    } 
+    }
 
     .aside {
         grid-column: 1/1;
@@ -23,7 +23,7 @@
 
             @media only screen and (min-width : 320px) and (max-width : 480px) {
                 font-size: 1.5rem;
-            } 
+            }
         }
 
         .cart-list {
@@ -56,19 +56,19 @@
 
                 p {
                     line-height: 1.5rem;
-    
+
                     .delete-item {
                         margin-left: 1rem;
                         cursor: pointer;
                     }
                 }
-    
+
                 th {
-                    background-color: rgba(255,255,255,0.2);
+                    background-color: rgba(255, 255, 255, 0.2);
                     font-size: 0.8rem;
                     padding: 1rem 0.4rem;
                 }
-    
+
                 .productQty {
                     text-align: center;
                     width: 1.2rem;
@@ -82,11 +82,38 @@
             align-items: center;
             padding: 1rem 0;
             width: 21.5rem;
-            background-color: rgba(255,255,255,0.2);
+            background-color: rgba(255, 255, 255, 0.2);
 
             p {
                 font-size: 1rem;
                 margin-right: 1rem;
+            }
+        }
+
+        .purchase {
+
+            button {
+                display: inline-block;
+                background-color: #f4c023;
+                width: 21.5rem;
+                padding: 1rem 0;
+                color: black;
+                font-size: 1rem;
+                font-weight: 400;
+                margin-top: 1rem;
+                border: none;
+                border-radius: 0.3rem;
+                box-shadow: 1px 2px 1rem rgba(0, 0, 0, .1);
+                transition: background-color .3s;
+
+                @media only screen and (min-width : 320px) and (max-width : 480px) {
+                    font-size: 1.1rem;
+                    padding: 0.8rem 1.5rem;
+                }
+
+                &:hover {
+                    background-color: #dbaf29;
+                }
             }
         }
 
@@ -102,7 +129,7 @@
 
             @media only screen and (min-width : 320px) and (max-width : 480px) {
                 margin-bottom: 1.2rem;
-            } 
+            }
 
             p,
             label {
@@ -111,7 +138,7 @@
                 @media only screen and (min-width : 320px) and (max-width : 480px) {
                     font-size: 1.1rem;
                     line-height: 2rem;
-                } 
+                }
             }
 
             label,
@@ -137,7 +164,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-        } 
+        }
 
         .card {
             width: 100%;
@@ -148,7 +175,7 @@
 
             @media only screen and (min-width : 320px) and (max-width : 480px) {
                 text-align: center;
-            } 
+            }
 
             .image-container {
                 height: 12rem;
@@ -172,7 +199,7 @@
 
                 @media only screen and (min-width : 320px) and (max-width : 480px) {
                     font-size: 1.5rem;
-                } 
+                }
             }
 
             .paragraph {
@@ -180,7 +207,7 @@
 
                 @media only screen and (min-width : 320px) and (max-width : 480px) {
                     font-size: 1.1rem;
-                } 
+                }
             }
 
             .price {
@@ -189,7 +216,7 @@
 
                 @media only screen and (min-width : 320px) and (max-width : 480px) {
                     font-size: 1.5rem;
-                } 
+                }
             }
 
             .add-btn {
@@ -207,7 +234,7 @@
                 @media only screen and (min-width : 320px) and (max-width : 480px) {
                     font-size: 1.1rem;
                     padding: 0.8rem 1.5rem;
-                } 
+                }
 
                 &:hover {
                     background-color: #dbaf29;
@@ -215,4 +242,74 @@
             }
         }
     }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    overflow: auto;
+    background-color: #056F72;
+    background-color: rgba(0, 0, 0, 0.4);
+
+
+    .modal-content {
+        background-color: white;
+        color: #056F72;
+        margin: 15%;
+        padding: 2rem 2rem 1rem;
+        width: 60%;
+        border-radius: 1rem;
+
+
+        h5 {
+            font-family: "Clash display", sans-serif;
+            font-weight: 500;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .closeIcon {
+            background-color: white;
+            color: #056F72;
+            float: right;
+            font-size: 2rem;
+            cursor: pointer;
+            border: none;
+            transition: opacity .3s;
+
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+
+        .modal-body {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn-cerrar {
+            border: 1px solid #056F72;
+            background-color: white;
+            border-radius: .5rem;
+            margin: 1rem 0;
+            padding: 0.6rem 1.2rem;
+            color: #056F72;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: opacity .5s;
+
+            &:hover {
+                background-color: #056F72;
+                opacity: 0.8;
+                color: white;
+            }
+        }
+    }
+
+
 }
