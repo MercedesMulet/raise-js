@@ -441,6 +441,7 @@ button {
         margin-left: 0.6rem; } }
     .ecom .ecom-section .card {
       width: 100%;
+      align-self: flex-start;
       background-color: white;
       box-shadow: 5px 5px 1rem rgba(0, 0, 0, 0.1);
       color: black;
