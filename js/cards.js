@@ -23,10 +23,8 @@ function createCard(producto) {
     btnElement.href = "#";
     imageElement.setAttribute('src', producto.img);
 
-    headingElement.innerHTML = `${producto.codigoRaise}`;
-    paragraphElement.innerHTML = `<b>${producto.categoria}</b><br>
-    ${producto.tipoLlaves}<br>
-    Ref.: ${producto.referencia}<br>
+    headingElement.innerHTML = `${producto.categoria} <span class="span-ref">${producto.referencia}</span>`;
+    paragraphElement.innerHTML = `${producto.tipoLlaves}<br>
     Material: ${producto.material}<br>
     Para máquinas: ${producto.modeloMaquina}<br>
     <br><hr>`;
@@ -45,6 +43,7 @@ function createCard(producto) {
         freshSubTotal(producto);
         freshTotal();
         saveOnStorage();
+        renderPurchBtn();
     });
 };
 

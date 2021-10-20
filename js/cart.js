@@ -76,7 +76,7 @@ function addAndShowCart(producto) {
 
     // nombre producto
     let col1 = document.createElement("TD");
-    col1.innerHTML = `${producto.categoria}<br>${producto.codigoRaise}`;
+    col1.innerHTML = `${producto.categoria}<br>${producto.referencia}`;
 
     // precio producto
     let col2 = document.createElement("TD");
@@ -155,9 +155,9 @@ function addAndShowCart(producto) {
         freshTotal();
         // eliminar boton comprar
         if (cart.length === 0) {
-            let row2 = document.getElementById('rowDos');
+            let purchBtnDiv = document.getElementById('purchBtnDiv');
             let purchBtn = document.getElementById('purchBtn');
-            row2.removeChild(purchBtn);
+            purchBtnDiv.removeChild(purchBtn);
         };
     });
 
@@ -168,18 +168,6 @@ function addAndShowCart(producto) {
     row.appendChild(col4);
     row.appendChild(col5);
 
-     // render del boton comprar
-     if (cart.length === 1) {
-        let row2 = document.createElement('TR');
-        row2.setAttribute('id', 'rowDos');
-        let purchaseBtn = document.createElement('a');
-        purchaseBtn.setAttribute('id', 'purchBtn');
-        purchaseBtn.innerHTML = `<button id="purchaseBtn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Comprar</button>`
-        purchaseBtn.addEventListener("click", purchaseBtnClicked);
-        row2.appendChild(purchaseBtn);
-        cartContent.appendChild(row2);
-    }
-
     cartContent.appendChild(row);
     cartTable.appendChild(cartContent);
 
@@ -187,8 +175,21 @@ function addAndShowCart(producto) {
     freshTotal();
 };
 
+// render del boton comprar
+function renderPurchBtn() {
+    if (cart.length === 1 && cart[0].cantidad === 1) {
+        let purchBtnDiv = document.getElementById('purchBtnDiv');
+        let purchBtn = document.createElement('a');
+        purchBtn.setAttribute('id', 'purchBtn');
+        purchBtn.innerHTML = `<button id="purchBtn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Comprar</button>`;
+        purchBtn.addEventListener("click", purchaseBtnClicked);
+        purchBtnDiv.appendChild(purchBtn);
+    };
+};
+
 // funcion boton comprar
-function purchaseBtnClicked() {
+function purchaseBtnClicked(e) {
+    e.preventDefault();
     let cartContent = document.getElementById("cartContent");
     cartContent.innerHTML = "";
     cart = [];
@@ -196,5 +197,7 @@ function purchaseBtnClicked() {
     let total = 0;
     let totalCart = document.getElementById('totalCart');
     totalCart.innerHTML = `$${total}`;
-    purchaseDiv.innerHTML = "";
+    purchBtnDiv.innerHTML = "";
 };
+
+
