@@ -10,6 +10,7 @@ if (LScart) {
     cart.map(producto => {
         addAndShowCart(producto);
     });
+    renderPurchBtn();
 };
 
 // funcion para guardar en storage
