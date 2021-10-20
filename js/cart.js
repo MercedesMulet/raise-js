@@ -64,6 +64,7 @@ function addAndShowCart(producto) {
         cart.push({
             categoria: producto.categoria,
             codigoRaise: producto.codigoRaise,
+            referencia: producto.referencia,
             precio: producto.precio,
             cantidad: 1,
         });
@@ -178,7 +179,7 @@ function addAndShowCart(producto) {
 
 // render del boton comprar
 function renderPurchBtn() {
-    if (cart.length === 1 && cart[0].cantidad === 1) {
+    if (!document.getElementById('purchBtn') && cart.length >= 1) {
         let purchBtnDiv = document.getElementById('purchBtnDiv');
         let purchBtn = document.createElement('a');
         purchBtn.setAttribute('id', 'purchBtn');
@@ -189,8 +190,7 @@ function renderPurchBtn() {
 };
 
 // funcion boton comprar
-function purchaseBtnClicked(e) {
-    e.preventDefault();
+function purchaseBtnClicked() {
     let cartContent = document.getElementById("cartContent");
     cartContent.innerHTML = "";
     cart = [];
@@ -201,4 +201,5 @@ function purchaseBtnClicked(e) {
     purchBtnDiv.innerHTML = "";
 };
 
-
+/* cart.length === 1 && cart[0].cantidad === 1
+ */
