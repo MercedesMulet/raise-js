@@ -25,8 +25,8 @@ function createCard(producto) {
 
     headingElement.innerHTML = `${producto.categoria} <span class="span-ref">${producto.referencia}</span>`;
     paragraphElement.innerHTML = `${producto.tipoLlaves}<br>
-    Material: ${producto.material}<br>
-    Para máquinas: ${producto.modeloMaquina}<br>
+    ${producto.material}<br>
+    Máquinas: ${producto.modeloMaquina}<br>
     <br><hr>`;
     spanElement.innerHTML = `<br>$ ${producto.precio}<br>`;
     btnElement.innerHTML = "Agregar al carrito";
