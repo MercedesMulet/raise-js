@@ -138,11 +138,6 @@
                     border-bottom: 1px dotted white;
                     padding: 1rem 0;
 
-                    i {
-                        cursor: pointer;
-                        align-items: center;
-                    }
-
                     button {
                         background-color: white;
                         width: 1rem;
@@ -153,6 +148,17 @@
                         font-weight: 600;
                         color: #056F72;
                         margin: 0.2rem;
+                    }
+                }
+
+                .delete-item {
+                    border-bottom: 1px dotted transparent;
+
+
+                    i {
+                        cursor: pointer;
+                        align-items: center;
+                        margin-left: 1rem;
                     }
                 }
 
@@ -183,7 +189,7 @@
             justify-content: center;
             align-items: center;
             padding: 1rem 0;
-            width: 21.5rem;
+            width: 17.32rem;
             background-color: rgba(255, 255, 255, 0.2);
 
             p {
@@ -194,7 +200,7 @@
 
         #purchBtn {
             background-color: #00b150;
-            width: 21.5rem;
+            width: 17.32rem;
             margin-top: 1rem;
             padding: 0.5rem 0;
             color: white;
@@ -205,18 +211,13 @@
             box-shadow: 1px 2px 1rem rgba(0, 0, 0, .1);
             transition: background-color .3s;
 
-            @media only screen and (min-width : 320px) and (max-width : 480px) {
-                font-size: 1.1rem;
-                padding: 0.8rem 1.5rem;
-            }
-
             &:hover {
                 background-color: #0d8543;
             }
         }
 
         hr {
-            width: 21.5rem;
+            width: 17.32rem;
             margin-bottom: 2rem;
         }
 
